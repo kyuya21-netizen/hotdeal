@@ -1116,7 +1116,7 @@ body{letter-spacing:-.005em}
           partner: /coupang\.com|coupa\.ng/i.test(link), category: String(r[4] || '').trim() || '기타', memo: '',
           img: /^https:\/\//i.test(img) ? img : '', pick: yes(r[6]), ended: yes(r[7]), sample: false,
           pct: pct, t: 0, i: n - idx};
-      }).filter(function(d){ return d.name && d.price > 0; });
+      }).filter(function(d){ return d.name && d.price > 0 && !d.ended; });
       $('#upd').textContent = '실시간';
       buildChips(); render();
       if(!deals.length) $('#empty').textContent = '곧 새 딜이 올라와요.';
