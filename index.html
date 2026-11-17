@@ -234,6 +234,10 @@ body{letter-spacing:-.005em}
 @media (prefers-reduced-motion: no-preference){.tagcard{animation:swing 1.6s ease-out 1 both}@keyframes swing{0%{transform:rotate(-14deg)}45%{transform:rotate(9deg)}70%{transform:rotate(2deg)}100%{transform:rotate(5deg)}}}
 .go{background:var(--ink);color:var(--bg)}
 .chip.q[aria-pressed="true"]{background:var(--red)}
+
+.tilelink{display:block;color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.deal>.tilelink{margin:0}
+.tilelink:focus-visible{outline:3px solid var(--ink);outline-offset:-3px}
 </style>
 </head>
 <body>
@@ -571,6 +575,10 @@ body{letter-spacing:-.005em}
 @media (prefers-reduced-motion: no-preference){.tagcard{animation:swing 1.6s ease-out 1 both}@keyframes swing{0%{transform:rotate(-14deg)}45%{transform:rotate(9deg)}70%{transform:rotate(2deg)}100%{transform:rotate(5deg)}}}
 .go{background:var(--ink);color:var(--bg)}
 .chip.q[aria-pressed="true"]{background:var(--red)}
+
+.tilelink{display:block;color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.deal>.tilelink{margin:0}
+.tilelink:focus-visible{outline:3px solid var(--ink);outline-offset:-3px}
 </style>
 </head>
 <body>
@@ -795,7 +803,11 @@ body{letter-spacing:-.005em}
     } else {
       tile = el('div', 'tile plain', d.category || '딜');
     }
-    c.appendChild(tile);
+    var linkable = okUrl(d.link) && !d.sample && !d.ended;
+    if(linkable){
+      var tl = el('a', 'tilelink'); tl.href = d.link; tl.target = '_blank'; tl.rel = 'noopener noreferrer sponsored nofollow';
+      tl.setAttribute('aria-label', d.name + ' 보러 가기'); tl.appendChild(tile); c.appendChild(tl);
+    } else c.appendChild(tile);
 
     var body = el('div', 'body');
     var badges = el('div', 'badges');
