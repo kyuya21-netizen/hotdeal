@@ -257,6 +257,23 @@ body{letter-spacing:-.005em}
 .shelfrow .fav,.pickrow .fav,.cards .fav{padding:6px 8px;font-size:.9rem}
 .list.cards{grid-template-columns:1fr 1fr;gap:8px}
 @media (min-width:700px){.list.cards{grid-template-columns:repeat(4,1fr)}}
+
+/* denser: 3+ cards visible per row */
+.shelfrow .deal{flex:0 0 112px}
+.pickrow .deal{flex:0 0 118px}
+.shelf .shelfrow.open,.list.cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (min-width:700px){.shelf .shelfrow.open,.list.cards{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.deal>*:not(.tile):not(.tilelink){margin-left:8px;margin-right:8px}
+.cards .name,.shelfrow .name,.pickrow .name{font-size:.74rem;line-height:1.28}
+.cards .price strong,.shelfrow .price strong,.pickrow .price strong{font-size:.9rem}
+.cards .price .pct,.shelfrow .price .pct,.pickrow .price .pct{font-size:.68rem}
+.shelfrow .tile b,.pickrow .tile b,.cards .tile b{font-size:1.25rem}
+.shelfrow .tile small,.pickrow .tile small,.cards .tile small{font-size:.54rem}
+.shelfrow .tile .pc,.pickrow .tile .pc,.cards .tile .pc{font-size:.62rem;padding:2px 6px;left:5px;top:5px}
+.shelfrow .act,.pickrow .act,.cards .act{gap:5px}
+.shelfrow .go,.pickrow .go,.cards .go{font-size:.7rem;padding:6px 2px}
+.shelfrow .fav,.pickrow .fav,.cards .fav{padding:5px 7px;font-size:.8rem}
+.shelfrow .badge,.pickrow .badge,.cards .badge{font-size:.6rem;padding:0 5px}
 </style>
 </head>
 <body>
@@ -617,6 +634,23 @@ body{letter-spacing:-.005em}
 .shelfrow .fav,.pickrow .fav,.cards .fav{padding:6px 8px;font-size:.9rem}
 .list.cards{grid-template-columns:1fr 1fr;gap:8px}
 @media (min-width:700px){.list.cards{grid-template-columns:repeat(4,1fr)}}
+
+/* denser: 3+ cards visible per row */
+.shelfrow .deal{flex:0 0 112px}
+.pickrow .deal{flex:0 0 118px}
+.shelf .shelfrow.open,.list.cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (min-width:700px){.shelf .shelfrow.open,.list.cards{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.deal>*:not(.tile):not(.tilelink){margin-left:8px;margin-right:8px}
+.cards .name,.shelfrow .name,.pickrow .name{font-size:.74rem;line-height:1.28}
+.cards .price strong,.shelfrow .price strong,.pickrow .price strong{font-size:.9rem}
+.cards .price .pct,.shelfrow .price .pct,.pickrow .price .pct{font-size:.68rem}
+.shelfrow .tile b,.pickrow .tile b,.cards .tile b{font-size:1.25rem}
+.shelfrow .tile small,.pickrow .tile small,.cards .tile small{font-size:.54rem}
+.shelfrow .tile .pc,.pickrow .tile .pc,.cards .tile .pc{font-size:.62rem;padding:2px 6px;left:5px;top:5px}
+.shelfrow .act,.pickrow .act,.cards .act{gap:5px}
+.shelfrow .go,.pickrow .go,.cards .go{font-size:.7rem;padding:6px 2px}
+.shelfrow .fav,.pickrow .fav,.cards .fav{padding:5px 7px;font-size:.8rem}
+.shelfrow .badge,.pickrow .badge,.cards .badge{font-size:.6rem;padding:0 5px}
 </style>
 </head>
 <body>
