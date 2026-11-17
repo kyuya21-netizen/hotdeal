@@ -788,7 +788,7 @@ body{letter-spacing:-.005em}
     var c = el('article', 'deal' + (d.ended ? ' ended' : ''));
     var tile;
     if(d.img && /^(data:image\/|https:\/\/)/.test(d.img)){
-      tile = el('div', 'tile'); var im = document.createElement('img'); im.src = d.img; im.alt = ''; tile.appendChild(im);
+      tile = el('div', 'tile'); var im = document.createElement('img'); im.loading = 'lazy'; im.src = d.img; im.alt = ''; tile.appendChild(im);
       if(d.pct) tile.appendChild(el('span', 'pc', d.pct + '%'));
     } else if(d.pct){
       tile = el('div', 'tile'); tile.appendChild(el('b', '', d.pct + '%')); tile.appendChild(el('small', '', 'OFF'));
